@@ -61,9 +61,7 @@
   <Target Name="NuGetPack">
 
     <ItemGroup>
-      <!-- Exclude versioning future strong-named libs -->
-      <RegexTransform Include="$(BuildSolutionDir)/src/**/AssemblyInfo.cs"
-                      Exclude="$(SrcDir)/ServiceStack.Interfaces*/Properties/AssemblyInfo.cs">
+      <RegexTransform Include="$(BuildSolutionDir)/src/**/AssemblyInfo.cs">
         <Find>\d+\.\d+\.\d+\.\d+</Find>
         <ReplaceWith>$(Version)</ReplaceWith>
       </RegexTransform>
